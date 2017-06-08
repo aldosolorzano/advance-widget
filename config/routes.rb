@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 
-  root 'mifiel#index'
-  resources :mifiel
+  root 'documents#index'
+  get '/mifiel/docs/callback', to: 'mifiel_callbacks#index'
+  resources :documents
 end
