@@ -13,7 +13,7 @@ RSpec.describe DocumentsController, type: :controller do
       expect(response).to render_template(:new)
     end
   end
-  
+
   describe "#create" do
     it 'post to #create Creates a new pdf ' do
       name = Faker::RickAndMorty.character
