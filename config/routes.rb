@@ -3,5 +3,7 @@ Rails.application.routes.draw do
 
   root 'documents#index'
   get '/mifiel/docs/callback', to: 'mifiel_callbacks#index'
-  resources :documents
+  resources :documents,shallow:true do
+    resources :signs
+  end
 end
