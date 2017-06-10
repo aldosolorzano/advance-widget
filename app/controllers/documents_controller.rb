@@ -8,10 +8,9 @@ class DocumentsController < ApplicationController
        return
      else
       #  method to create pdf file and mifiel doc
-       document = create_pdf(file_name)
-       widget_id = Mifiel::Document.all.last.signers.first.widget_id
+       document  = create_pdf(file_name)
        if document.nil? then alert("Couldn't save document") end
-
+       widget_id = document.signers.first["widget_id"]
        redirect_to sign_path(widget_id,{file_name:file_name})
      end
  end
@@ -34,16 +33,16 @@ class DocumentsController < ApplicationController
 
  def create_mifiel_doc(file_path,file_name)
    file_contents = File.read(file_path)
-   hash = Digest::SHA256.hexdigest(file_contents)
-   document = Mifiel::Document.create(
-    hash: hash,
-    name: "#{file_name}.pdf",
-    signatories: [{
-      email: 'jeff@email.com',
-      tax_id: 'PRUE890723KLI'
-    }],
-    callback_url: 'http://aa68c69e.ngrok.io/mifiel/docs/callback'
-   )
+   hash          = Digest::SHA256.hexdigest(file_contents)
+   document      = Mifiel::Document.create(
+      hash: hash,
+      name: "#{file_name}.pdf",
+      signatories: [{
+        email: 'jeff@email.com',
+        tax_id: 'PRUE890723KLI'
+      }],
+      callback_url: 'https://aa68c69e.ngrok.io/mifiel/docs/callback'
+     )
    document
  end
 
