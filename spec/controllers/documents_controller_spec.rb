@@ -13,13 +13,13 @@ RSpec.describe DocumentsController, type: :controller do
       expect(response).to render_template(:new)
     end
   end
-  
+
   describe "#create" do
     it 'post to #create Creates a new pdf ' do
       name = Faker::RickAndMorty.character
       name = name.split(' ').join('')
       post(:create, params: {name:name})
-      file_path = "#{Rails.root}/public/documents/#{name}.pdf"
+      file_path = "#{Rails.root}/public/documents/original/#{name}.pdf"
       expect(File).to exist(file_path)
     end
   end
