@@ -1,24 +1,25 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## Dependencies
+  * Ruby 2.3.1
+  * Rails 5.0.2
+  * Ngrok
 
-Things you may want to cover:
+## Installation
 
-* Ruby version
+Bundle ruby gems:
+```
+ $ bundle install
+```  
+Database creation:
+```
+ $ rails/rake db:create
+```
+How to run the test suite:
+```
+  $ rails s  
+  $ ngrok http 3000
+  
+  Go to the documents_controller.rb and change the callback: ngrok link
+```  
 
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
