@@ -3,7 +3,24 @@
   <%= form_tag documents_path do %>
   <div class="form-group">
     <%= label_tag 'Document Name'%>
-    <%= text_field_tag :name,'',class:'form-control' %>
+    <%= text_field_tag :name,'',class:'form-control file-name' %>
   </div>
-  <%= submit_tag 'Create PDF', class:'btn btn-info'  %>
+  <%= submit_tag 'Create PDF', class:'btn btn-info create-pdf'  %>
   <% end %>
+  
+<!-- Modal -->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+      </div>
+      <div class="modal-body">
+        <div class="loading ">
+          <div class="loader center-block ">
+          </div>
+          <p class="text-center">Cooking a PDF!</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
