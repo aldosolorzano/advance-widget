@@ -42,7 +42,7 @@ class DocumentsController < ApplicationController
       email: 'jeff@email.com',
       tax_id: 'PRUE890723KLI'
     }],
-    callback_url: 'https://b1ae1168.ngrok.io/mifiel/docs/callback'
+    callback_url: 'http://aa68c69e.ngrok.io/mifiel/docs/callback'
    )
    document
  end
