@@ -243,6 +243,7 @@ DEPENDENCIES
   jquery-rails
   listen (~> 3.0.5)
   mifiel!
+  nokogiri
   pdfkit
   pg (~> 0.18)
   puma (~> 3.0)

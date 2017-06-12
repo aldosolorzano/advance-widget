@@ -32,6 +32,7 @@ class DocumentsController < ApplicationController
  end
 
  def create_mifiel_doc(file_path,file_name)
+   ngrok_url     = 'https://77cf18b7.ngrok.io' # change this line
    file_contents = File.read(file_path)
    hash          = Digest::SHA256.hexdigest(file_contents)
    document      = Mifiel::Document.create(
@@ -41,7 +42,7 @@ class DocumentsController < ApplicationController
         email: 'jeff@email.com',
         tax_id: 'PRUE890723KLI'
       }],
-      callback_url: 'https://aa68c69e.ngrok.io/mifiel/docs/callback'
+      callback_url: "#{ngrok_url}/mifiel/docs/callback"
      )
    document
  end
