@@ -21,6 +21,11 @@ Create a app_keys.rb file inside the initializers folder
 ENV['MIFIEL_APP_ID'] = 'put your mifiel_id'
 ENV['MIFIEL_APP_SECRET'] = 'put your mifiel_secret'
 ```
+How to run the test suite:
+```
+  $ rails s  
+  $ ngrok http 3000
+```  
 Got to documents_controller.rb
 ```ruby
 # change the ngrok_url variable to your ngrok url 
@@ -41,11 +46,6 @@ Got to documents_controller.rb
    document
  end
 ```
-How to run the test suite:
-```
-  $ rails s  
-  $ ngrok http 3000
-```  
 After signing the document, check your server logs to see the POST call from the Mifiel servers.
 ```
  You can find your documents inside: public/documents folder
