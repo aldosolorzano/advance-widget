@@ -1,9 +1,10 @@
 # README
 
 ## Dependencies
-  * Ruby 2.3.1
-  * Rails 5.0.2
+  * Ruby 2.3
+  * Rails 5
   * Ngrok
+  * postgreSQL 9
 
 ## Installation
 
