@@ -22,20 +22,21 @@ ENV['MIFIEL_APP_SECRET'] = 'put your mifiel_secret'
 ```
 Got to documents_controller.rb
 ```ruby
-# change the callback_url 
+# change the ngrok_url variable to your ngrok url 
 
  def create_mifiel_doc(file_path,file_name)
+   ngrok_url     = 'https://77cf18b7.ngrok.io' # change this line
    file_contents = File.read(file_path)
-   hash = Digest::SHA256.hexdigest(file_contents)
-   document = Mifiel::Document.create(
-    hash: hash,
-    name: "#{file_name}.pdf",
-    signatories: [{
-      email: 'jeff@email.com',
-      tax_id: 'PRUE890723KLI'
-    }],
-    callback_url: 'put ngrok link'
-   )
+   hash          = Digest::SHA256.hexdigest(file_contents)
+   document      = Mifiel::Document.create(
+      hash: hash,
+      name: "#{file_name}.pdf",
+      signatories: [{
+        email: 'jeff@email.com',
+        tax_id: 'PRUE890723KLI'
+      }],
+      callback_url: "#{ngrok_url}/mifiel/docs/callback"
+     )
    document
  end
 ```
