@@ -45,5 +45,8 @@ How to run the test suite:
   $ rails s  
   $ ngrok http 3000
 ```  
-
+After signing the document, check your server logs to see the POST call from the Mifiel servers.
+```
+ You can find your documents inside: public/documents folder
+```
 
