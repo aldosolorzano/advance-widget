@@ -27,6 +27,11 @@ gem 'jquery-rails'
 gem 'jbuilder', '~> 2.5'
 gem 'mifiel', git: 'https://github.com/Mifiel/ruby-api-client.git'
 gem 'api-auth'
+gem 'pdfkit'
+gem 'wkhtmltopdf-binary'
+gem 'bootstrap-sass', '~> 3.3.6'
+gem 'combine_pdf'
+gem 'nokogiri'
 # Use Redis adapter to run Action Cable in production
 # gem 'redis', '~> 3.0'
 # Use ActiveModel has_secure_password
@@ -39,6 +44,11 @@ group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platform: :mri
   gem 'rspec-rails'
+  gem 'hirb'
+  gem 'interactive_editor'
+  gem 'awesome_print'
+  gem 'rails-controller-testing'
+  gem 'faker', github: 'stympy/faker'
 end
 
 group :development do
